@@ -1,0 +1,64 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "airbnb-typescript"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "multiline-ternary": "off",
+        "no-prototype-builtins": "off",
+        "react/prop-types": "off",
+        "array-callback-return": "off",
+        "spaced-comment": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-handler-names": "off",
+        "react/jsx-closing-bracket-location": "off",
+        "react/jsx-closing-tag-location":"off",
+        "space-before-function-paren": ["error", {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always"
+        }],
+        "semi": ["error", "always"],
+        "jsx-quotes": ["error", "prefer-double"],
+        "comma-dangle": ["error", "only-multiline"],
+        "no-console": "warn",
+        "no-unused-vars": "warn",
+        "max-len": [1, 160],
+        "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "indent": ["error", 2, { "SwitchCase": 1 }],
+        "react/jsx-indent-props": ["error", 2],
+        "react/jsx-indent":["error", 2],
+        "object-curly-newline": ["error", { "multiline": true }],
+        "@typescript-eslint/indent": ["error", 2],
+        "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-props-no-spreading": "off",
+        "jsx-a11y/aria-role": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "@typescript-eslint/lines-between-class-members": "off",
+        "arrow-body-style": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "no-plusplus": "off"
+
+    }
+}
