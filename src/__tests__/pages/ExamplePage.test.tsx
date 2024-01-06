@@ -9,10 +9,13 @@ import ExamplePage from '../../pages/ExamplePage/ExamplePage';
 import io from 'socket.io-client';
 
 let mockEmitter = jest.fn();
+let mockDisconnect = jest.fn();
+let mockOn = jest.fn();
 jest.mock('socket.io-client', () => {
   return jest.fn(() => ({
     emit: mockEmitter,
-    on: jest.fn(),
+    on: mockOn,
+    disconnect: mockDisconnect,
   }))
 });
 
@@ -20,7 +23,6 @@ const mockStore = configureStore([]);
 
 describe('ExamplePage', () => {
   let store: any;
-  let socket: any;
 
   beforeEach(() => {
     store = mockStore({ ticker: {
@@ -55,5 +57,13 @@ describe('ExamplePage', () => {
     userEvent.click(getByText('Get Data'));
 
     expect(mockSocket.emit).toHaveBeenCalledWith('ticker', 'AAPL');
+
+    mockSocket.on('AAPL', (data: any) => {
+      expect(data).toEqual([]);
+    });
+
+    userEvent.click(getByText('Stop fetching'));
+
+    expect(mockSocket.disconnect).toHaveBeenCalled();
   });
 });
