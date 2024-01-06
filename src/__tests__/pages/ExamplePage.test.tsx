@@ -7,7 +7,13 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import ExamplePage from '../../pages/ExamplePage/ExamplePage';
 
-jest.mock('socket.io-client');
+let mockEmitter = jest.fn();
+jest.mock('socket.io-client', () => {
+  return jest.fn(() => ({
+    emit: mockEmitter,
+    on: jest.fn(),
+  }))
+});
 
 const mockStore = configureStore([]);
 
