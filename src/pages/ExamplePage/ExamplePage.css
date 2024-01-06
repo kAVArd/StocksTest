@@ -1,0 +1,39 @@
+.inputsRow {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+  }
+
+  .redButton {
+    background-color: #f44336;
+  }
+
+  .symbolsInput {
+    width: 200px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    transition: 0.5s;
+  }
+  
+  .symbolsInput:focus {
+    border-color: #4CAF50;
+  }
