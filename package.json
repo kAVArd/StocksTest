@@ -23,7 +23,6 @@
     "rxjs": "^7.8.1",
     "sass": "^1.69.5",
     "socket.io-client": "^4.7.3",
-    "socket.io-mock": "^1.3.2",
     "ts-jest": "^29.1.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
